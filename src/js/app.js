@@ -4,22 +4,28 @@ const options = ['Rock', 'Paper', 'Scissors'];
 
 // Metodo juego de la pc
 const computerPlay = (options) => {
+
     let choice = Math.floor(Math.random() * (options.length));
     let choiceOne = options[choice];
     return choiceOne;
 
 }
-
 //console.log(computerPlay(options));
 
 // Metodo Juego de persona
 const playerPlay = () => {
+
     let choice = prompt('Choose your game option: Rock, Paper or Scissors! Choose well..');
     return choice;
+    
 }
+
+const playerSelector = playerPlay();
+const computerSelector = computerPlay(options);
 
 // Metodo Juego por ronda
 const playRound = (playerSelector, computerSelector) => {
+
     let str = `Player choose: ${playerSelector} Pc choose: ${computerSelector}`;
     console.log(str);
     //choose Rock
@@ -48,7 +54,19 @@ const playRound = (playerSelector, computerSelector) => {
     }
 
 }
+//console.log(playRound(playerSelector, computerSelector));
 
-const playerSelector = playerPlay();
-const computerSelector = computerPlay(options);
-console.log(playRound(playerSelector, computerSelector));
+const gameRound = playRound(playerSelector, computerSelector);
+
+// Metodo Juego 
+const game = (gameRound) => {
+    return gameRound;
+}
+    
+
+// for (let i = 1; i <= 5; i++) {
+    //console.log(i + ' Hola');
+    // console.log(game(gameRound));
+// }
+
+console.log(game(gameRound));
